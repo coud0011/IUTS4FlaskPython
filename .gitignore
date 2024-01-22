@@ -1,1 +1,7 @@
+# .gitignore
+# Ignorer le répertoire de l’environnement virtuel
+env_flask/
+# Ignorer le répertoire de configuration de PyCharm
 .idea/
+# Ignorer le cache de Python
+__pycache__/
