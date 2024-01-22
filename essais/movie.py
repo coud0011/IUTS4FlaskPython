@@ -77,7 +77,7 @@ class Movie:
 
     @staticmethod
     def durationToString(minutes: int) -> str:
-        return f"{minutes // 60}:{minutes % 60}"
+        return f"{minutes // 60:02d}:{minutes % 60:02d}"
 
     @staticmethod
     def ratingToStars(rating: int, maxi: int):
