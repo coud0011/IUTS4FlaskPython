@@ -62,7 +62,7 @@ class Movie:
         """
         self._setRating(r)
 
-    # Mise en place de la propriété “duration” en lecture seule
+    # Mise en place de la propriété “genres” en lecture seule
     def _getGenres(self) -> list:
         return self._genres.copy()
 
