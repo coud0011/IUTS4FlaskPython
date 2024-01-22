@@ -56,7 +56,7 @@ class Movie:
     def rating(self) -> float:
         """
         Retourne la note donnée au film (comprise entre 0 et 10).
-        Retour:
+        Retour :
         Note du film
         """
         return self._getRating()
@@ -66,7 +66,11 @@ class Movie:
         """
         Modifie la note du film.
         La note doit être comprise entre 0 et 10
-        Paramètre:
-        r: nouvelle note du film (entre 0 et 10)
+        Paramètre :
+        r : nouvelle note du film (entre 0 et 10)
         """
         self._setRating(r)
+
+    # permet de définir la conversion de l'objet en string
+    def __repr__(self) -> str:
+        return f"{self.title} ({durationToString(self.duration)})\n{ratingToStars(round(self.rating), 10)}"

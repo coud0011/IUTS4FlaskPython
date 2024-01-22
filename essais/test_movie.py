@@ -10,7 +10,7 @@ print(ratingToStars(2, 8))
 print(ratingToStars(4, 8))
 print(ratingToStars(8, 8))
 
-m1 = Movie("Les évadés", 510)
+m1 = Movie("Les évadés", 122, 9.0)
 print(vars(m1))
 print(dir(m1))
 
@@ -34,5 +34,4 @@ except ValueError as e:
 except:
     print("Ce n’est pas la bonne exception qui a été lancée !!?")
 
-print(m1.getTitle())
-print(m1.rating)
+print(m1)
