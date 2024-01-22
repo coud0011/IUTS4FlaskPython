@@ -1,6 +1,6 @@
 # Fichier créé par Axel COUDROT le 22/01/2024
 class Movie:
-    def __init__(self: object, title: str, duration: int, genres: list, rating: float = 0.0):
+    def __init__(self: object, title: str, genres: list, duration: int, rating: float = 0.0):
         if not (0 <= rating <= 10):
             raise ValueError("rating incorrect pour un film")
         self._title = title
