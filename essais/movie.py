@@ -14,9 +14,59 @@ def ratingToStars(rating: int, maxi: int):
 
 
 class Movie:
-    def __init__(self, title: str, duration: int, rating: float = 0):
-        if not (0 <= rating <= 10):
-            raise ValueError("invalid rating for a movie")
+    def __init__(self: object, title: str, duration: int = 0, rating: float = 0.0):
         self._title = title
-        self.duration = duration
+        self._duration = duration
         self.rating = rating
+
+    # Mise en place de la propriété “title” en lecture seule
+    def _getTitle(self) -> str:
+        return self._title
+
+    @property
+    def title(self) -> str:
+        """
+        Retourne le titre du film.
+        Retour :
+        Titre du film
+        """
+        return self._getTitle()
+
+    # Mise en place de la propriété “duration” en lecture seule
+    def _getDuration(self) -> int:
+        return self._duration
+
+    @property
+    def duration(self) -> int:
+        """
+        Retourne la durée du film (exprimée en minutes).
+        Retour :
+        Durée du film
+        """
+        return self._getDuration()
+
+    # Mise en place de la proprité “rating” en lecture et écriture
+    def _getRating(self) -> float:
+        return self._rating
+
+    def _setRating(self, rating: float) -> None:
+        self._rating = rating
+
+    @property
+    def rating(self) -> float:
+        """
+        Retourne la note donnée au film (comprise entre 0 et 10).
+        Retour:
+        Note du film
+        """
+        return self._getRating()
+
+    @rating.setter
+    def rating(self, r: float) -> None:
+        """
+        Modifie la note du film.
+        La note doit être comprise entre 0 et 10
+        Paramètre:
+        r: nouvelle note du film (entre 0 et 10)
+        """
+        self._setRating(r)

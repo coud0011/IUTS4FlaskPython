@@ -33,3 +33,6 @@ except ValueError as e:
     print(f"L’exception \"{e}\" a bien été lancée.")
 except:
     print("Ce n’est pas la bonne exception qui a été lancée !!?")
+
+print(m1.getTitle())
+print(m1.rating)
