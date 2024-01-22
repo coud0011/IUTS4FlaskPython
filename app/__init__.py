@@ -7,3 +7,4 @@ app = Flask(__name__)
 # On importe le fichier contenant
 # la définition des fonctions de vue
 from app import routes
+# tailwind css
