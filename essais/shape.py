@@ -1,8 +1,8 @@
 # Fichier créé par Axel COUDROT le 22/01/2024
 # essais/shape.py
 class Shape:
-    def __init__(self):
-        self._pen: str = ''
+    def __init__(self, pen: str = ''):
+        self._pen: str = pen
 
     def draw(self) -> None:
         pass
