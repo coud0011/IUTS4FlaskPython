@@ -1,18 +1,4 @@
 # Fichier créé par Axel COUDROT le 22/01/2024
-def durationToString(minutes: int) -> str:
-    return f"{minutes // 60}:{minutes % 60}"
-
-
-def ratingToStars(rating: int, maxi: int):
-    res = ''
-    for i in range(maxi):
-        if i < rating:
-            res += '\u2605'
-        else:
-            res += '\u2606'
-    return res
-
-
 class Movie:
     def __init__(self: object, title: str, duration: int = 0, rating: float = 0.0):
         self._title = title
@@ -71,6 +57,20 @@ class Movie:
         """
         self._setRating(r)
 
+    @staticmethod
+    def durationToString(minutes: int) -> str:
+        return f"{minutes // 60}:{minutes % 60}"
+
+    @staticmethod
+    def ratingToStars(rating: int, maxi: int):
+        res = ''
+        for i in range(maxi):
+            if i < rating:
+                res += '\u2605'
+            else:
+                res += '\u2606'
+        return res
+
     # permet de définir la conversion de l'objet en string
     def __repr__(self) -> str:
-        return f"{self.title} ({durationToString(self.duration)})\n{ratingToStars(round(self.rating), 10)}"
+        return f"{self.title} ({Movie.durationToString(self.duration)})\n{Movie.ratingToStars(round(self.rating), 10)}"

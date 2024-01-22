@@ -1,14 +1,14 @@
 # Fichier créé par Axel COUDROT le 22/01/2024
-from movie import durationToString, ratingToStars, Movie
+from movie import Movie
 
-print(durationToString(512))
-print(durationToString(4096))
-print(durationToString(32768))
+print(Movie.durationToString(512))
+print(Movie.durationToString(4096))
+print(Movie.durationToString(32768))
 
-print(ratingToStars(0, 8))
-print(ratingToStars(2, 8))
-print(ratingToStars(4, 8))
-print(ratingToStars(8, 8))
+print(Movie.ratingToStars(0, 8))
+print(Movie.ratingToStars(2, 8))
+print(Movie.ratingToStars(4, 8))
+print(Movie.ratingToStars(8, 8))
 
 m1 = Movie("Les évadés", 122, 9.0)
 print(vars(m1))
