@@ -7,3 +7,5 @@ env_flask/
 __pycache__/
 # Ignorer les packages Node.js
 node_modules/
+# Ignorer la base de donnée
+app.db
