@@ -5,3 +5,5 @@ env_flask/
 .idea/
 # Ignorer le cache de Python
 __pycache__/
+# Ignorer les packages Node.js
+node_modules/

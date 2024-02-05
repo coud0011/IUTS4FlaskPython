@@ -10,6 +10,7 @@ title : titre de la page (str)
     <title>{{ title }} - Mon Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="{{ url_for('static', filename='css/main.css' }}", rel="stylesheet">
 </head>
 <body>
     <div class="w3-card" style="margin:10px">
