@@ -7,11 +7,11 @@ from app import app
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'username': 'Philippe'}
+    user = {'username': 'Toi'}
     # return render_template('index.html', title='Page principale', user=user)
     posts = [
         {
-            'author': {'username': 'John'},
+            'author': {'username': 'Axel'},
             'body': "Flask, c'est super !"
         },
         {
@@ -20,3 +20,8 @@ def index():
         }
     ]
     return render_template('index.html', title='Accueil', user=user, posts=posts)
+
+
+@app.route('/apropos')
+def a_propos():
+    return render_template('apropos.html', title='A propos')

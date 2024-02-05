@@ -8,15 +8,36 @@ title : titre de la page (str)
 <html>
 <head>
     <title>{{ title }} - Mon Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <nav>
-        <div>Mon Application : <a href="/index">Accueil</a></div>
-    </nav>
-    <hr>
-    <!-- Les pages s'afficheront ici -->
-    {% block contenu %}
-    {% endblock %}
-    <!-- fin d'affichage des pages -->
+    <div class="w3-card" style="margin:10px">
+        <header class="w3-card-4">
+            <table class="w3-table">
+                <tr class="w3-col">
+                    <th><img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" /></th>
+                    <th class="w3-display-topmiddle w3-center"><h1>Mon Application</h1></th>
+                </tr>
+                <tr class="w3-card w3-indigo">
+                    <th class="w3-light-grey w3-col s1 w3-center"><a href="/index">Accueil</a></th>
+                    <th class="w3-rest"><a href="#"></a></th>
+                    <th class="w3-col w3-light-grey s6 w3-center"><a href="/apropos">A propos</a></th>
+                </tr>
+            </table>
+        </header>
+        <hr>
+        <!-- Les pages s'afficheront ici -->
+        <div class="w3-light-gray w3-card" style="padding:10px">
+            {% block contenu %}
+            {% endblock %}
+        </div>
+        <footer>
+            <div>
+                <h5 class="w3-right w3-card w3-indigo" style="margin: 30px; border-radius: 5px; padding: 10px">© Axel C. - 2024</h5>
+            </div>
+        </footer>
+        <!-- fin d'affichage des pages -->
+    </div>
 </body>
 </html>
