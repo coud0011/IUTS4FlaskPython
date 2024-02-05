@@ -555,3 +555,15 @@ video {
 .table {
   display: table;
 }
+
+.content-center {
+  align-content: center;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.align-middle {
+  vertical-align: middle;
+}

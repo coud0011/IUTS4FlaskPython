@@ -1,0 +1,23 @@
+<!-- app/templates/login.html -->
+{% extends "base.html" %}
+{% block contenu %}
+    <form action="" method="post" novalidate style="padding-bottom: 45px">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+            {% for error in form.username.errors %}
+                <span style="color: red;">[Le nom de l'utilisateur est requis.]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }} <br>
+            {{ form.password(size=32) }}
+            {% for error in form.password.errors %}
+                <span style="color: red;">[Un mot de passe est requis]</span>
+            {% endfor %}
+        </p>
+        <p> {{ form.remember_me() }} {{ form.remember_me.label }} </p>
+        <p class="w3-card w3-indigo s1 w3-col" style="border-radius: 2px; padding: 10px"> {{ form.submit() }} </p>
+    </form>
+{% endblock %}
