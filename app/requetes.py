@@ -27,6 +27,7 @@ posts = [(1, ["C'est mon premier post", datetime(2020, 1, 1)]),
          (4, ["Pas du tout", datetime(2020, 1, 18)])]
 for u in users:
     user = User(username=u[0], email=u[1])
+    user.set_password("test")
     db.session.add(user)
     db.session.commit()
 for p in posts:
