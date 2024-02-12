@@ -1,7 +1,7 @@
 # Fichier créé par Axel COUDROT le 05/02/2024
 # app/models.py
 from datetime import datetime
-
+from werkzeug.security import generate_password_hash, check_password_hash
 from app import db
 
 
@@ -13,7 +13,13 @@ class User(db.Model):
     posts = db.relationship('Post', backref='author', lazy='dynamic')
 
     def __repr__(self: object) -> str:
-        return f"<User {self.username} with email : {self.email}>"
+        return f"<User {self.username}>"
+
+    def set_password(self, password: str) -> None:
+        self.password_hash = generate_password_hash(password)
+
+    def check_password(self, password: str) -> bool:
+        return check_password_hash(self.password_hash, password)
 
 
 class Post(db.Model):

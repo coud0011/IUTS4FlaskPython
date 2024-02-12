@@ -12,3 +12,4 @@ then
     flask db upgrade
 fi
 python3 app/requetes.py
+flask shell
