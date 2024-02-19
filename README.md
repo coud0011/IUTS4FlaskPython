@@ -52,3 +52,18 @@ Sous Windows :
 ```
 Mise en place en cours
 ```
+## Faire du flask en ligne de commande
+- Activer l'environnement de développement :
+Sous Linux :
+```bash
+source env_flask/bin/activate
+```
+Sous Windows : 
+```
+Mise en place en cours 
+```
+<!-- La commande est env_flask\Scripts\activate -->
+- Pour lancer le shell Flask :
+```bash
+flask shell
+```

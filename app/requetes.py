@@ -26,7 +26,7 @@ posts = [(1, ["C'est mon premier post", datetime(2020, 1, 1)]),
          (4, ["Symfony est comparable à Django.", datetime(2020, 1, 14)]),
          (4, ["Pas du tout", datetime(2020, 1, 18)])]
 for u in users:
-    user = User(username=u[0], email=u[1])
+    user = User(username=u[0], email=u[1], about_me="Je parle de moi dans cette partie !")
     user.set_password("test")
     db.session.add(user)
     db.session.commit()

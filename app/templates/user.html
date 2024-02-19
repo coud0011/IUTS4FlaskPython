@@ -8,6 +8,16 @@ posts : Liste d'objets de type Post
 {% extends "base.html" %}
 {% block contenu %}
     <h1>Utilisateur {{ user.username }}</h1>
+    {% if user.about_me %}
+        <p>
+            {{ user.about_me}}
+        </p>
+    {%endif%}
+    {% if user.last_seen %}
+        <p>
+        Derni&egrave;re visite : {{ user.last_seen }}
+        </p>
+    {% endif %}
     <hr>
     {% for post in posts %}
         <p>
