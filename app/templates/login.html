@@ -20,4 +20,8 @@
         <p> {{ form.remember_me() }} {{ form.remember_me.label }} </p>
         <p class="w3-card w3-indigo s1 w3-col" style="border-radius: 2px; padding: 10px"> {{ form.submit() }} </p>
     </form>
+    <p>
+        <br>
+        Nouvel utilisateur ? <a href="{{ url_for('register') }}">S'enregistrer</a>
+    </p>
 {% endblock %}
