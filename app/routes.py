@@ -41,11 +41,11 @@ def login() -> Response | str:
         return redirect(url_for('/index'))
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        if user is None or not user.check_password(form.password.data):
+        _user = User.query.filter_by(username=form.username.data).first()
+        if _user is None or not _user.check_password(form.password.data):
             flash('Utilisateur ou mot de passe non valide.')
             return redirect(url_for('login'))
-        login_user(user, remember=form.remember_me.data)
+        login_user(_user, remember=form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or urlsplit(next_page).netloc != '':
             next_page = url_for('index')
@@ -74,3 +74,10 @@ def register() -> Response | str:
         flash('Bravo ! Vous devenez un nouvel utilisateur !')
         return redirect(url_for('login'))
     return render_template('register.html', title="S'enregistrer", form=form)
+
+
+@app.route('/user/<username>')
+@login_required
+def user(username: str) -> str:
+    user_ = User.query.filter(User.username == username).first_or_404(description="L'utilisateur saisi n'existe pas")
+    return render_template('user.html', user=user_, posts=user_.posts)

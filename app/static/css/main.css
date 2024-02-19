@@ -567,3 +567,8 @@ video {
 .align-middle {
   vertical-align: middle;
 }
+
+.nav_links{
+    text-decoration: none;
+    color: white;
+}
