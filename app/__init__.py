@@ -4,6 +4,7 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from app.config import Config
 from flask_login import LoginManager
+from flask_moment import Moment
 
 # Création de l'application
 # __name__ contient le nom de l'application : app
@@ -18,6 +19,8 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 # Fonction de vue de redirection
 login.login_view = 'login'
+# Instanciation du module de gestion des dates
+moment = Moment(app)
 # On importe le fichier contenant
 # la définition des fonctions de vue
 # ainsi que celui des modèles

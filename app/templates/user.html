@@ -10,12 +10,12 @@ posts : Liste d'objets de type Post
     <h1>Utilisateur {{ user.username }}</h1>
     {% if user.about_me %}
         <p>
-            {{ user.about_me}}
+            {{ user.about_me }}
         </p>
     {%endif%}
     {% if user.last_seen %}
         <p>
-        Derni&egrave;re visite : {{ user.last_seen }}
+        Derni&egrave;re visite : {{moment(user.last_seen).format('LLL')}}
         </p>
     {% endif %}
     <hr>
